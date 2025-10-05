@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Egg Timer</title>
+</head>
+<body>
+    <h1>EGG TIMER FOR MY POOKIES 🥚😊</h1>
+    <h2>Select which type of egg you want:</h2>
+
+    <div id="button-container">
+        <div id="first">
+            <button onclick="window.location.href='soft.html'">
+                <img src="Gemini_Generated_Image_zigahzzigahzziga.png" alt="Soft boiled">
+                Soft boiled
+            </button>
+            <button onclick="window.location.href='medium.html'">Medium boiled</button>
+        </div>
+
+        <div id="second">
+            <button onclick="window.location.href='overmedium.html'">A little over medium boiled</button>
+            <button onclick="window.location.href='hard.html'">Hard boiled</button>
+        </div>
+    </div>
+<script>
+// Map each button text to its corresponding HTML page
+const buttonMap = {
+    "Soft boiled": "soft.html",
+    "Medium boiled": "medium.html",
+    "A little over medium boiled": "A_little_over_medium.html",
+    "Hard boiled": "hard.html"
+};
+
+// Select all buttons inside #button-container
+const allButtons = document.querySelectorAll("#button-container button");
+
+allButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const text = button.textContent.trim();
+        const targetPage = buttonMap[text];
+        if(targetPage){
+            // Navigate to the corresponding page
+            window.location.href = targetPage;
+        }
+    });
+});
+</script>
+
+</body>
+
+</html>
+

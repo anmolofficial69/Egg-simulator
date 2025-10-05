@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>A Little Over Medium Egg</title>
+</head>
+<body>
+<h1>A Little Over Medium Egg 🥚</h1>
+<h2>Your egg is ready in:</h2>
+
+<div id="timer">08:00</div>
+
+<div style="margin-top:30px;">
+    <button onclick="window.location.href='index.html'">Back</button>
+    <button onclick="window.location.href='hard.html'">Next</button>
+</div>
+
+<script>
+function startTimer(duration) {
+    let timer = duration, minutes, seconds;
+    const display = document.getElementById('timer');
+
+    const interval = setInterval(function () {
+        minutes = Math.floor(timer / 60);
+        seconds = timer % 60;
+
+        if (minutes < 10) minutes = '0' + minutes;
+        if (seconds < 10) seconds = '0' + seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            clearInterval(interval);
+            alert("A little over medium boiled egg is ready! 🥚");
+        }
+    }, 1000);
+}
+
+// Start 8 min timer
+startTimer(8*60);
+</script>
+</body>
+</html>
